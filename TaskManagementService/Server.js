@@ -14,6 +14,7 @@ const promClient = require('prom-client');
 const {register} =require('./Monitoring/metrics')
 var winston = require('winston'),
     expressWinston = require('express-winston');
+const rTracer = require("cls-rtracer");
 
 
 const app= express()
@@ -51,9 +52,10 @@ var sess = {
     res.setHeader('Content-Type', register.contentType);
     res.send(await register.metrics());
 }); 
-
+app.use(rTracer.expressMiddleware());
 const server = http.createServer(app);
 const Port=process.env.PORT||3000
+
 server.listen(Port,console.log(Date.now))
 mongoose.connect(db)
     .then(()=> console.log('MongoDB connected'))

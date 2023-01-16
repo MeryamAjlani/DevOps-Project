@@ -23,6 +23,7 @@
     "express": "^4.18.2",
     "express-prometheus-middleware": "^1.2.0",
     "express-session": "^1.17.3",
+    "express-tracing": "^1.0.2",
     "express-winston": "^4.2.0",
     "http": "0.0.1-security",
     "mongoose": "^6.8.3",
