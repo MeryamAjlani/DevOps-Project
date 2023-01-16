@@ -2,11 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Day = require("../Models/DayModel");
 const Todo = require("../Models/TodoModel");
-const http=require('http')
+
+const promMid = require('express-prometheus-middleware');
 
 module.exports = {
 
        getDay: async (req,res,next)=>{
+        httpCounter.inc({ method: req.method, path: req.path });
          try { 
          const {date,user} = req.body
           //

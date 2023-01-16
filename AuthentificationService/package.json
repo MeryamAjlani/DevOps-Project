@@ -1,0 +1,24 @@
+{
+  "name": "testexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "test": "node index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "express-prom-bundle": "^6.6.0",
+    "mongoose": "^6.8.0",
+    "prom-client": "^14.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}

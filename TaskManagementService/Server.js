@@ -8,8 +8,11 @@ const http = require('http')
 const bodyParser = require('body-parser')
 const routes= require('./routes')
 const session = require('express-session')
-
+const promMid = require('express-prometheus-middleware');
 const db= require('./Config/MongoConfig').mongoURI;
+const promClient = require('prom-client');
+const {register} =require('./Monitoring/metrics')
+
 
 const app= express()
 app.use(express.json());
@@ -27,8 +30,12 @@ var sess = {
   }
   
   app.use(session(sess))
+  app.use(routes)
+  app.get('/metrics', async (req ,res) => {
+    res.setHeader('Content-Type', register.contentType);
+    res.send(await register.metrics());
+}); 
 
-app.use(routes)
 const server = http.createServer(app);
 const Port=process.env.PORT||3000
 server.listen(Port,console.log(Date.now))

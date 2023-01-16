@@ -1,12 +1,14 @@
 const createError = require('http-errors')
 const Todo=require('../Models/TodoModel')
 const e = require('express')
-
+const{ httpCounter}=require('../Monitoring/metrics')
 
 module.exports = {
 
         getTodo: async (req,res,next)=>{
-         
+          //childLogger.info('Getting tweets by user id', { request_id: req.headers['x-request-id']})
+         httpCounter.inc({ method: req.method, path: req.path });
+
        try{
         console.log("getting Todos By Date for user ");
         const result=req

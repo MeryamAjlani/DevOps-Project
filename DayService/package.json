@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/MeryamAjlani/Journey#readme",
   "dependencies": {
+    "axios": "^1.2.2",
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "express-prometheus-middleware": "^1.2.0",
     "express-session": "^1.17.3",
     "http": "^0.0.1-security",
     "jsonwebtoken": "^9.0.0",
