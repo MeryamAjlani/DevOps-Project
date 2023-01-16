@@ -13,9 +13,9 @@ module.exports = {
          const {date,user} = req.body
           //
          const dates= await Day.find({date:date})
+         //http://localhost:3000/getTodo/${date}
          
-         
-          fetch(`http://localhost:3000/getTodo/${date}`).then(async (res2)=>{
+          fetch(`http://todo-service:3000/getTodo/${date}`).then(async (res2)=>{
             
           console.log("this is res 2 :" ,res2)
         return res.send({dates:dates,todos: await Todo.find({date:date})})

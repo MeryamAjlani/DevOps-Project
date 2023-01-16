@@ -5,18 +5,17 @@ const { User, addNewUser, deleteUser ,updateUser, login} = require("../../databa
 
 
 router.post('/login', async(req, res) => { 
-  console.log(req.body)
   fUser =await login(req.body.email,req.body.password);
   console.log(fUser)
 
       if (fUser === undefined) { 
-          return res.status(400).send({ 
+          return res.status(400).json({ 
               message : "User not found."
           }); 
       } 
       else { 
           if (fUser==false) { 
-            return res.status(400).send({ 
+            return res.status(400).json({ 
               message : "Wrong Password"
           }); 
                       
