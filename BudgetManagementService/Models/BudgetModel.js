@@ -1,20 +1,20 @@
 const mongoose = require('mongoose');
 
-const ToDoSchema = new mongoose.Schema({
+const BudgetSchema = new mongoose.Schema({
     userId:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
     date:{
-        type:String
+        type:Date
     },
     description:{
         type:String
     },
-    status: {
-        type: Boolean,
+    amont: {
+        type: Number,
     },
    
 });
-const Todo = mongoose.model('todo', ToDoSchema);
-module.exports = Todo;
+const Budget = mongoose.model('budget', BudgetSchema);
+module.exports = Budget;

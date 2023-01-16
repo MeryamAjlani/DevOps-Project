@@ -2,7 +2,7 @@
 const express= require('express')
 const router = express.Router();
 
-const actions =require('./Methods/TodoMethods');
+const actions =require('./Methods/BudgetMethods');
 
 
 router.get('/',(req,res)=>{
@@ -10,8 +10,8 @@ router.get('/',(req,res)=>{
     res.send('batta')
 })
 
-router.post('/addTodo',actions.addTodo)
-router.get('/getTodo/:date',actions.getTodo)
+router.post('/addBudget',actions.addBudget)
+router.post('/getBudget',actions.getBudget)
 
 
 

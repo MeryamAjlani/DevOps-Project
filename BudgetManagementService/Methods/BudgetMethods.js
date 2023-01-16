@@ -1,5 +1,5 @@
 const createError = require('http-errors')
-const Todo=require('../Models/TodoModel')
+const Todo=require('../Models/BudgetModel')
 const e = require('express')
 
 
@@ -8,12 +8,11 @@ module.exports = {
         getTodo: async (req,res,next)=>{
          
        try{
-        console.log("getting Todos By Date for user ");
-        const result=req
-        console.log("this is the second service",result)
-        const items= await Todo.find({date:result.params.date})
+        console.log("getting Todos By Date");
+        const result=req.body
+        const items= await Todo.find({date:result.date,userId:req.session.userId})
         console.log(items)
-      return  res.send(items)
+       res.send(items)
        }
        catch(e){
         console.log(e)
@@ -29,7 +28,7 @@ module.exports = {
           todo["userId"]=req.session.userId
           await Todo.insert(todo)
         }
-      return res.send("todos added")
+       res.send("todos added")
        }
        catch(e){
         console.log(e)
