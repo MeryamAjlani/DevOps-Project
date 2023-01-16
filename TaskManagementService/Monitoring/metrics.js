@@ -17,22 +17,22 @@ collectDefaultMetrics({ register });
  const retodoCounter = new promClient.Counter({
     name: 'todo_service_retodo_counter',
     help: 'todo_service_retodo_counter',
-    labelNames: ['todo_id'],
+    labelNames: ['date'],
     registers: [register]
 });
 
  const todoCounter = new promClient.Counter({
     name: 'todo_service_todo_counter',
     help: 'todo_service_todo_counter',
-    labelNames: ['user_id'],
+    labelNames: ['date'],
     registers: [register]
 });
 
 const todosByUserHistogram = new promClient.Histogram({
     name: 'todo_service_todo_histogram',
     help: 'todo_service_todo_histogram',
-    labelNames: ['user_id'],
+    labelNames: ['date'],
     registers: [register]
 });
 
-module.exports={register,httpCounter}
+module.exports={register,httpCounter,todosByUserHistogram,retodoCounter,todoCounter}

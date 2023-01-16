@@ -1,7 +1,7 @@
 const createError = require('http-errors')
 const Todo=require('../Models/TodoModel')
 const e = require('express')
-const{ httpCounter}=require('../Monitoring/metrics')
+const{ httpCounter,todosByUserHistogram,retodoCounter,todoCounter}=require('../Monitoring/metrics')
 
 module.exports = {
 
@@ -14,6 +14,10 @@ module.exports = {
         const result=req
         console.log("this is the second service",result)
         const items= await Todo.find({date:result.params.date})
+        todoCounter.inc({
+          date:result.params.date
+      });
+        todosByUserHistogram.observe(items.length);
         console.log(items)
       return  res.send(items)
        }
