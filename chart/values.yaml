@@ -1,0 +1,8 @@
+# default params of our helm charts
+authentification:
+  replicas: 1
+  service-port: 80
+
+todo:
+  replicas: 1
+   
