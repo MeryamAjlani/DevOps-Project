@@ -31,7 +31,7 @@ const metricsMiddleware = promBundle({
     }
 });
 
-app.use(metricsMiddleware)
+//app.use('/authentification',metricsMiddleware)
 
 
 app.use('/authentification',require('./routes/api/authentification'))

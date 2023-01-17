@@ -48,7 +48,7 @@ var sess = {
     ignoreRoute: function (req, res) { return false; } // optional: allows to skip some log messages based on request and/or response
   }));
   app.use(routes)
-  app.get('/metrics', async (req ,res) => {
+  app.get('/todo/metrics', async (req ,res) => {
     res.setHeader('Content-Type', register.contentType);
     res.send(await register.metrics());
 }); 

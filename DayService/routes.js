@@ -5,14 +5,14 @@ const router = express.Router();
 const actions =require('./Methods/day');
 const auth = require('./Methods/auth')
 
-router.get('/',(req,res)=>{
+router.get('/date/',(req,res)=>{
     var date = new Date()
     res.send('batta')
 })
 
-router.post('/addDay',actions.addDay)
-router.post('/getDay',actions.getDay)
-router.post('/user',auth.login)
+router.post('/date/addDay',actions.addDay)
+router.post('/date/getDay',actions.getDay)
+router.post('/date/user',auth.login)
 
 
 

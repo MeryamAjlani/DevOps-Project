@@ -6,8 +6,8 @@ const actions =require('./Methods/TodoMethods');
 
 
 
-router.post('/addTodo',actions.addTodo)
-router.get('/getTodo/:date',actions.getTodo)
+router.post('/todo/addTodo',actions.addTodo)
+router.get('/todo/getTodo/:date',actions.getTodo)
 
 
 
