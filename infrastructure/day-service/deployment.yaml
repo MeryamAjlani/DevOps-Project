@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: daymanagement-service
+  labels:
+    app: daymanagement-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: daymanagement-service
+  template:
+    metadata:
+      labels:
+        app: daymanagement-service
+    spec:
+      containers:
+        - name: daymanagement-service
+          image: wissembendaly/day-service
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3001

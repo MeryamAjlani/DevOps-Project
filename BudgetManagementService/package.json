@@ -1,0 +1,30 @@
+{
+  "name": "taskmanagementservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeryamAjlani/Journey.git"
+  },
+  "author": "MeryamAjlani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MeryamAjlani/Journey/issues"
+  },
+  "homepage": "https://github.com/MeryamAjlani/Journey#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "http": "0.0.1-security",
+    "mongoose": "^6.8.3",
+    "morgan": "^1.10.0",
+    "passport": "^0.6.0"
+  }
+}

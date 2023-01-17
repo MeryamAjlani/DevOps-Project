@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: daymanagement-service
+  labels:
+    app: daymanagement-service
+spec:
+  selector:
+      app: daymanagement-service
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 3001
+  type: ClusterIP

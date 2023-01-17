@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: daymanagement
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /date
+        pathType: Prefix
+        backend:
+          service:
+            name: daymanagement-service
+            port:
+              number: 80
