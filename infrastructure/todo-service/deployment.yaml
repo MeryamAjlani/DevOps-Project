@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: todo-service
-          image: wissembendaly/todo-service
+          image: meryamcaramel/todomanagement
           imagePullPolicy: Always
           ports:
             - containerPort: 3000

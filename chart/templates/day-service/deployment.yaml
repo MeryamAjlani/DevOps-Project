@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: daymanagement-service
-          image: wissembendaly/day-service
+          image:  meryamcaramel/daymanagement
           imagePullPolicy: Always
           ports:
             - containerPort: 3001

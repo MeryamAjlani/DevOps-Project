@@ -13,4 +13,4 @@ spec:
           service:
             name: auth-service
             port:
-              number: {{ .Values.authentification.service-port }}
+              number: {{ .Values.authentification.servicePort }}

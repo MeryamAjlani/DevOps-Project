@@ -1,9 +1,9 @@
 datadog:
-  site: datadoghq.com
+  site: datadoghq.eu
 
   kubelet: 
     tlsVerify: false
-
+  apiKey: "0316ef0200702210449998c8bf2b02ae"
   logs:
     enabled: true
     containerCollectAll: true

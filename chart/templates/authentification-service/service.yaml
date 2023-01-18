@@ -8,7 +8,7 @@ spec:
   selector:
       app: auth-service
   ports:
-  - port: {{ .Values.authentification.service-port }}
+  - port: {{ .Values.authentification.servicePort }}
     protocol: TCP
     targetPort: 5000
   type: ClusterIP

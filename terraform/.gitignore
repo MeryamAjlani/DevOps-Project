@@ -1,0 +1,4 @@
+first-stack/.terraform*
+second-stack/.terraform*
+*.tfvars
+.terraform
